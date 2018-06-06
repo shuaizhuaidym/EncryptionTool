@@ -28,10 +28,9 @@ public class FrmEnvelop extends javax.swing.JPanel {
         jSplitPane1.setOneTouchExpandable(true);//让分割线显示出箭头
         jSplitPane1.setContinuousLayout(true);//操作箭头，重绘图形
         jSplitPane1.setOrientation(JSplitPane.HORIZONTAL_SPLIT);//设置分割线方向
-        jpSrc.setSize(400, 400);
-        jpRst.setSize(400, 400);
-        jSplitPane1.setLeftComponent(jpSrc);//布局中添加组件 ，面板1
-        jSplitPane1.setRightComponent(jpRst);//添加面板2
+       
+        jSplitPane1.setLeftComponent(jtaSrc);//布局中添加组件 ，面板1
+        jSplitPane1.setRightComponent(jtaRst);//添加面板2
         jSplitPane1.setDividerSize(5);//设置分割线的宽度
         jSplitPane1.setDividerLocation(200);//设定分割线的距离左边的位置
         
@@ -52,71 +51,39 @@ public class FrmEnvelop extends javax.swing.JPanel {
     private void initComponents() {
 
         jSplitPane1 = new javax.swing.JSplitPane();
-        jpSrc = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        jpRst = new javax.swing.JPanel();
+        jtaSrc = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jtaRst = new javax.swing.JTextArea();
         jButton3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         jSplitPane1.setBorder(null);
-        jSplitPane1.setDividerSize(0);
+        jSplitPane1.setDividerLocation(128);
+        jSplitPane1.setDividerSize(8);
         jSplitPane1.setContinuousLayout(true);
+        jSplitPane1.setLastDividerLocation(128);
         jSplitPane1.setOneTouchExpandable(true);
-
-        jpSrc.setBackground(new java.awt.Color(255, 255, 255));
-        jpSrc.setBorder(javax.swing.BorderFactory.createTitledBorder("原文"));
 
         jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane3.setBorder(null);
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jTextArea3.setBorder(null);
-        jScrollPane3.setViewportView(jTextArea3);
+        jtaSrc.setColumns(16);
+        jtaSrc.setRows(5);
+        jtaSrc.setBorder(javax.swing.BorderFactory.createTitledBorder("原文"));
+        jScrollPane3.setViewportView(jtaSrc);
 
-        javax.swing.GroupLayout jpSrcLayout = new javax.swing.GroupLayout(jpSrc);
-        jpSrc.setLayout(jpSrcLayout);
-        jpSrcLayout.setHorizontalGroup(
-            jpSrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 623, Short.MAX_VALUE)
-            .addGroup(jpSrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE))
-        );
-        jpSrcLayout.setVerticalGroup(
-            jpSrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 327, Short.MAX_VALUE)
-            .addGroup(jpSrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE))
-        );
-
-        jSplitPane1.setLeftComponent(jpSrc);
-
-        jpRst.setBackground(new java.awt.Color(255, 255, 255));
-        jpRst.setBorder(javax.swing.BorderFactory.createTitledBorder("结果"));
+        jSplitPane1.setLeftComponent(jScrollPane3);
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setBorder(null);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setBorder(null);
-        jScrollPane2.setViewportView(jTextArea2);
+        jtaRst.setColumns(20);
+        jtaRst.setRows(5);
+        jtaRst.setBorder(javax.swing.BorderFactory.createTitledBorder("结果"));
+        jScrollPane2.setViewportView(jtaRst);
 
-        javax.swing.GroupLayout jpRstLayout = new javax.swing.GroupLayout(jpRst);
-        jpRst.setLayout(jpRstLayout);
-        jpRstLayout.setHorizontalGroup(
-            jpRstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        jpRstLayout.setVerticalGroup(
-            jpRstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
-        );
-
-        jSplitPane1.setRightComponent(jpRst);
+        jSplitPane1.setRightComponent(jScrollPane2);
 
         jButton3.setText("解密");
 
@@ -132,22 +99,22 @@ public class FrmEnvelop extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(555, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
                 .addContainerGap())
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jSplitPane1)
-                .addGap(11, 11, 11)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2))
-                .addGap(23, 23, 23))
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
+                .addGap(16, 16, 16))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -160,9 +127,7 @@ public class FrmEnvelop extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JPanel jpRst;
-    private javax.swing.JPanel jpSrc;
+    private javax.swing.JTextArea jtaRst;
+    private javax.swing.JTextArea jtaSrc;
     // End of variables declaration//GEN-END:variables
 }

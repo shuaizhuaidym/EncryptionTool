@@ -62,6 +62,8 @@ public class FrmSymmetric extends javax.swing.JPanel {
         jbtnEncode = new javax.swing.JButton();
         jbtnDecode = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(586, 300));
+
         jPanel1.setBackground(Values.B_G);
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("算法参数"));
 
@@ -271,7 +273,7 @@ public class FrmSymmetric extends javax.swing.JPanel {
     private void jbtnEncodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEncodeActionPerformed
         // TODO add your handling code here:
         if(!chkBoxShellEncrypt.isSelected()){
-              JOptionPane.showMessageDialog(this, "暂不支持自选加密算法。", "Error", JOptionPane.ERROR_MESSAGE);
+              JOptionPane.showMessageDialog(this, "暂不支持自选加密算法。", "错误", JOptionPane.ERROR_MESSAGE);
             return ;
         }
 

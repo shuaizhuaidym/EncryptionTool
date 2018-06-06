@@ -46,7 +46,6 @@ public class FrmDigest extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jttaDigest = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         cmbBoxAlg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "MD5", "SHA1", "SHA256" }));
 
@@ -58,20 +57,18 @@ public class FrmDigest extends javax.swing.JPanel {
         });
 
         jtta.setColumns(20);
-        jtta.setRows(5);
+        jtta.setRows(3);
         jtta.setToolTipText("可以拖拽文件哦");
         jScrollPane1.setViewportView(jtta);
 
+        jttaDigest.setBackground(new java.awt.Color(240, 240, 240));
         jttaDigest.setColumns(20);
         jttaDigest.setEditable(false);
         jttaDigest.setRows(2);
+        jttaDigest.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jScrollPane2.setViewportView(jttaDigest);
 
         jLabel1.setText("摘要算法");
-
-        jLabel2.setFont(new java.awt.Font("仿宋", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 153, 0));
-        jLabel2.setText("支持拖拽文件");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -87,10 +84,8 @@ public class FrmDigest extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cmbBoxAlg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jbtnCalculate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)
-                        .addGap(167, 167, 167)))
+                        .addComponent(jbtnCalculate, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                        .addGap(177, 177, 177)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -100,8 +95,7 @@ public class FrmDigest extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbBoxAlg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtnCalculate)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel1))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -125,7 +119,6 @@ public class FrmDigest extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox cmbBoxAlg;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jbtnCalculate;

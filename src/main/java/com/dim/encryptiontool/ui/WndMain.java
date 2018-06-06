@@ -45,7 +45,7 @@ public class WndMain extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("密码工具");
         setFont(new java.awt.Font("Academy Engraved LET", 0, 12)); // NOI18N
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 450));
 
         jTabbedPane1.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
 
@@ -57,7 +57,7 @@ public class WndMain extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
         );
 
         pack();
@@ -75,8 +75,8 @@ public class WndMain extends javax.swing.JFrame {
         jTabbedPane1.add(new FrmSymmetric(), "文件加解密");
         jTabbedPane1.add(new FrmEncoding(), "编解码");
         jTabbedPane1.add(new FrmDigest(), "摘要运算");
-        jTabbedPane1.add(new FrmPKI(), "签名");
-        jTabbedPane1.add(new FrmEnvelop(), "信封");
+        jTabbedPane1.add(new FrmPKI(), "数字签名");
+        jTabbedPane1.add(new FrmEnvelop(), "数字信封");
 
     }
 

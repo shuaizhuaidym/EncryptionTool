@@ -13,6 +13,8 @@ import java.net.URLEncoder;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.SplitPaneUI;
+import javax.swing.plaf.basic.BasicSplitPaneUI;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 
@@ -37,6 +39,13 @@ public class FrmEncoding extends javax.swing.JPanel {
      */
     public FrmEncoding() {
         initComponents();
+
+        jSplitPane1.setOneTouchExpandable(true);//让分割线显示出箭头
+        jSplitPane1.setContinuousLayout(true);//操作箭头，重绘图形
+        SplitPaneUI ui = jSplitPane1.getUI();
+        if (ui instanceof BasicSplitPaneUI) {
+            ((BasicSplitPaneUI) ui).getDivider().setBorder(null);
+        }
     }
 
     /**
@@ -52,14 +61,11 @@ public class FrmEncoding extends javax.swing.JPanel {
         btnOutput = new javax.swing.JButton();
         cbxAlgorithm = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtaOri = new javax.swing.JTextArea();
-        jPanel2 = new javax.swing.JPanel();
+        jSplitPane1 = new javax.swing.JSplitPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtaSec = new javax.swing.JTextArea();
-
-        setBackground(Values.B_G);
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtaOri = new javax.swing.JTextArea();
 
         btnCalc.setText("编码/解码(C)");
         btnCalc.addActionListener(new java.awt.event.ActionListener() {
@@ -79,41 +85,32 @@ public class FrmEncoding extends javax.swing.JPanel {
 
         jLabel3.setText("算法");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("明文"));
+        jSplitPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jSplitPane1.setBorder(null);
+        jSplitPane1.setDividerLocation(128);
+        jSplitPane1.setDividerSize(8);
+        jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        jtaOri.setColumns(20);
-        jtaOri.setRows(3);
-        jScrollPane1.setViewportView(jtaOri);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
-        );
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("密文"));
+        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setBorder(null);
 
         jtaSec.setColumns(20);
         jtaSec.setRows(5);
+        jtaSec.setTabSize(6);
+        jtaSec.setBorder(javax.swing.BorderFactory.createTitledBorder("密文"));
         jScrollPane2.setViewportView(jtaSec);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
-        );
+        jSplitPane1.setRightComponent(jScrollPane2);
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setBorder(null);
+
+        jtaOri.setColumns(20);
+        jtaOri.setRows(2);
+        jtaOri.setBorder(javax.swing.BorderFactory.createTitledBorder("原文"));
+        jScrollPane1.setViewportView(jtaOri);
+
+        jSplitPane1.setLeftComponent(jScrollPane1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -128,9 +125,8 @@ public class FrmEncoding extends javax.swing.JPanel {
                 .addComponent(btnCalc)
                 .addGap(18, 18, 18)
                 .addComponent(btnOutput)
-                .addContainerGap(168, Short.MAX_VALUE))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(318, Short.MAX_VALUE))
+            .addComponent(jSplitPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,10 +137,8 @@ public class FrmEncoding extends javax.swing.JPanel {
                     .addComponent(btnOutput)
                     .addComponent(cbxAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -257,10 +251,9 @@ public class FrmEncoding extends javax.swing.JPanel {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox cbxAlgorithm;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTextArea jtaOri;
     private javax.swing.JTextArea jtaSec;
     // End of variables declaration//GEN-END:variables
