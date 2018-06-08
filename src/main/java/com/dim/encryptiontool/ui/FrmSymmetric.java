@@ -288,13 +288,23 @@ public class FrmSymmetric extends javax.swing.JPanel {
             return;
         }
         if (StringUtils.isBlank(destPath)) {
-            int action = JOptionPane.showConfirmDialog(this, "您未选择目标文件，原文件将被覆盖。", 
-                    "注意", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, Values.icon_warn);
-            if (action == JOptionPane.OK_OPTION) {
+            int action = JOptionPane.showConfirmDialog(this, "您未选择目标文件，是覆盖原文件，否输出到新文件。", 
+                    "注意", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, Values.icon_warn);
+            if (action == JOptionPane.YES_OPTION) {
                 //覆盖源文件
                 //TODO 异步处理
                 encryptFile(srcPath, srcPath);
                 txtDstFile.setText(txtSrcFile.getText());
+            }else if(action == JOptionPane.NO_OPTION){
+                String target="";
+                if(srcPath.indexOf(".")>0){
+                    target = srcPath.replace(".", "_encrypt.");
+                }else{
+                    target = srcPath.concat("_encrypt");
+                }
+                
+                System.out.println(target);
+                //TODO
             }
         } else {
             encryptFile(srcPath, destPath);
