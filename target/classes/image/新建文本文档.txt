@@ -1,0 +1,16 @@
+POST /
+
+jit_qrcode_poll
+
+?
+
+
+Service_Type=qrcode_poll&
+
+
+jit_qrcode=YDbzOTOVBDmIWYuRe7Y0YdsX3QBIlkZZ
+
+
+
+
+HTTP/1.1

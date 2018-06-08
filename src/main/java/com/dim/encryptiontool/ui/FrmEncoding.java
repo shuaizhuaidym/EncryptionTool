@@ -74,6 +74,7 @@ public class FrmEncoding extends javax.swing.JPanel {
             }
         });
 
+        btnOutput.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/export.gif"))); // NOI18N
         btnOutput.setText("输出到文件(O)");
         btnOutput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,7 +126,7 @@ public class FrmEncoding extends javax.swing.JPanel {
                 .addComponent(btnCalc)
                 .addGap(18, 18, 18)
                 .addComponent(btnOutput)
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addContainerGap(298, Short.MAX_VALUE))
             .addComponent(jSplitPane1)
         );
         layout.setVerticalGroup(
@@ -138,7 +139,7 @@ public class FrmEncoding extends javax.swing.JPanel {
                     .addComponent(cbxAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE))
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
