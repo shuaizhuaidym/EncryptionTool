@@ -85,7 +85,7 @@ public class FrmSymmetric extends javax.swing.JPanel {
         jLabel1.setText("密码");
 
         chkBoxShellEncrypt.setSelected(true);
-        chkBoxShellEncrypt.setText("网关脚本加密");
+        chkBoxShellEncrypt.setText("默认算法");
         chkBoxShellEncrypt.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 chkBoxShellEncryptStateChanged(evt);
@@ -104,19 +104,17 @@ public class FrmSymmetric extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtPwd, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPwd)
-                            .addComponent(cmbBoxAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(chkBoxShellEncrypt)
+                            .addComponent(chkBoxShellEncrypt)
+                            .addComponent(cmbBoxAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -130,7 +128,7 @@ public class FrmSymmetric extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(cmbBoxAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(chkBoxShellEncrypt))
         );
 
@@ -290,13 +288,23 @@ public class FrmSymmetric extends javax.swing.JPanel {
             return;
         }
         if (StringUtils.isBlank(destPath)) {
-            int action = JOptionPane.showConfirmDialog(this, "您未选择目标文件，原文件将被覆盖。", 
-                    "注意", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, Values.icon_warn);
-            if (action == JOptionPane.OK_OPTION) {
+            int action = JOptionPane.showConfirmDialog(this, "您未选择目标文件，是覆盖原文件，否输出到新文件。", 
+                    "注意", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, Values.icon_warn);
+            if (action == JOptionPane.YES_OPTION) {
                 //覆盖源文件
                 //TODO 异步处理
                 encryptFile(srcPath, srcPath);
                 txtDstFile.setText(txtSrcFile.getText());
+            }else if(action == JOptionPane.NO_OPTION){
+                String target="";
+                if(srcPath.indexOf(".")>0){
+                    target = srcPath.replace(".", "_encrypt.");
+                }else{
+                    target = srcPath.concat("_encrypt");
+                }
+                
+                System.out.println(target);
+                //TODO
             }
         } else {
             encryptFile(srcPath, destPath);

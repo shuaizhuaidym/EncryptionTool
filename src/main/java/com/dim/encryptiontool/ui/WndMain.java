@@ -23,9 +23,7 @@ public class WndMain extends javax.swing.JFrame {
         setupWindow();        
     }
     protected final void setupWindow() {
-        ImageIcon imageIcon = new ImageIcon(getClass().getResource("/image/128ball.png"));
-        // 设置标题栏的图标为face.gif  
-        this.setIconImage(imageIcon.getImage());
+        this.setIconImage(Values.icon_logo.getImage());
         this.getContentPane().setBackground(Values.B_G);
         this.setLocationRelativeTo(null);
         initTabs();
