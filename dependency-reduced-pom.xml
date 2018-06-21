@@ -39,10 +39,20 @@
               <goal>shade</goal>
             </goals>
             <configuration>
+              <filters>
+                <filter>
+                  <artifact>*:*</artifact>
+                  <excludes>
+                    <exclude>META-INF/*.SF</exclude>
+                    <exclude>META-INF/*.DSA</exclude>
+                    <exclude>META-INF/*.RSA</exclude>
+                  </excludes>
+                </filter>
+              </filters>
               <transformers>
                 <transformer>
                   <manifestEntries>
-                    <Main-Class>com.dim.encryptiontool.ui.MainFrame</Main-Class>
+                    <Main-Class>com.dim.encryptiontool.ui.WndMain</Main-Class>
                     <Build-Number>16</Build-Number>
                   </manifestEntries>
                 </transformer>
