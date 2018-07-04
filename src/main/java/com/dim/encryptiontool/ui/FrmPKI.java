@@ -65,6 +65,7 @@ public class FrmPKI extends javax.swing.JPanel {
         jScrollPane3.setBorder(null);
 
         jTextArea3.setColumns(16);
+        jTextArea3.setLineWrap(true);
         jTextArea3.setRows(5);
         jTextArea3.setBorder(javax.swing.BorderFactory.createTitledBorder("原文"));
         jScrollPane3.setViewportView(jTextArea3);
@@ -74,6 +75,7 @@ public class FrmPKI extends javax.swing.JPanel {
         jScrollPane4.setBorder(null);
 
         jTextArea4.setColumns(20);
+        jTextArea4.setLineWrap(true);
         jTextArea4.setRows(5);
         jTextArea4.setBorder(javax.swing.BorderFactory.createTitledBorder("签名结果"));
         jScrollPane4.setViewportView(jTextArea4);

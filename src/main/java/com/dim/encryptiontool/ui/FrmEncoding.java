@@ -83,6 +83,7 @@ public class FrmEncoding extends javax.swing.JPanel {
         jScrollPane2.setBorder(null);
 
         jtaSec.setColumns(20);
+        jtaSec.setLineWrap(true);
         jtaSec.setRows(5);
         jtaSec.setTabSize(6);
         jtaSec.setBorder(javax.swing.BorderFactory.createTitledBorder("密文"));
@@ -94,6 +95,7 @@ public class FrmEncoding extends javax.swing.JPanel {
         jScrollPane1.setBorder(null);
 
         jtaOri.setColumns(20);
+        jtaOri.setLineWrap(true);
         jtaOri.setRows(2);
         jtaOri.setBorder(javax.swing.BorderFactory.createTitledBorder("原文"));
         jScrollPane1.setViewportView(jtaOri);
@@ -182,7 +184,7 @@ public class FrmEncoding extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnOutput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,7 +215,7 @@ public class FrmEncoding extends javax.swing.JPanel {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

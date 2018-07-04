@@ -69,9 +69,12 @@ public class FrmEnvelop extends javax.swing.JPanel {
 
         jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane3.setBorder(null);
+        jScrollPane3.setAutoscrolls(true);
 
         jtaSrc.setColumns(16);
+        jtaSrc.setLineWrap(true);
         jtaSrc.setRows(5);
+        jtaSrc.setWrapStyleWord(true);
         jtaSrc.setBorder(javax.swing.BorderFactory.createTitledBorder("原文"));
         jScrollPane3.setViewportView(jtaSrc);
 
@@ -79,9 +82,12 @@ public class FrmEnvelop extends javax.swing.JPanel {
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setBorder(null);
+        jScrollPane2.setAutoscrolls(true);
 
         jtaRst.setColumns(20);
+        jtaRst.setLineWrap(true);
         jtaRst.setRows(5);
+        jtaRst.setWrapStyleWord(true);
         jtaRst.setBorder(javax.swing.BorderFactory.createTitledBorder("结果"));
         jScrollPane2.setViewportView(jtaRst);
 
@@ -101,7 +107,7 @@ public class FrmEnvelop extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(411, Short.MAX_VALUE)
+                .addContainerGap(488, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)

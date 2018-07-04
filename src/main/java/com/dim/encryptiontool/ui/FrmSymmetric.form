@@ -62,7 +62,7 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtPwd" pref="487" max="32767" attributes="0"/>
+                      <Component id="txtPwd" pref="599" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="chkBoxShellEncrypt" min="-2" max="-2" attributes="0"/>
@@ -161,7 +161,7 @@
                   </Group>
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtDstFile" alignment="0" pref="451" max="32767" attributes="0"/>
+                      <Component id="txtDstFile" alignment="0" pref="573" max="32767" attributes="0"/>
                       <Component id="txtSrcFile" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -250,7 +250,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="406" max="32767" attributes="0"/>
+                  <EmptySpace pref="528" max="32767" attributes="0"/>
                   <Component id="jbtnEncode" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jbtnDecode" min="-2" max="-2" attributes="0"/>
